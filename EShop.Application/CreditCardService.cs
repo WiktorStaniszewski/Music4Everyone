@@ -13,9 +13,10 @@ public class CreditCardService : ICreditCardService
     public async Task<string> GetCardType(string cardNumber)
     {
         cardNumber = cardNumber.Replace(" ", "").Replace("-", "");
-        ValidateCard(cardNumber);
+        //ten fragment kodu jest niepotrzebny, bo controller ma je wywoływać kiedy trzeba
+        /*ValidateCard(cardNumber);
         if (!ValidateCard(cardNumber))
-            throw new CardNumberInvalidException();
+            throw new CardNumberInvalidException();*/
         if (Regex.IsMatch(cardNumber, @"^4(\d{12}|\d{15}|\d{18})$"))
             return "Visa";
         else if (Regex.IsMatch(cardNumber, @"^(5[1-5]\d{14}|2(2[2-9][1-9]|2[3-9]\d{2}|[3-6]\d{3}|7([01]\d{2}|20\d))\d{10})$"))

@@ -1,5 +1,6 @@
 ﻿using EShop.Application;
 using EShop.Domain.Exceptions;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
@@ -23,10 +24,11 @@ public class CreditCardController : ControllerBase
 
     // GET: api/<CreditCardController>
     [HttpGet("{creditCard}")]
-    public async Task<ActionResult> CheckIfCardIsValid(string creditCard)
+    public IActionResult CheckIfCardIsValid(string creditCard)
     {
         try
         {
+            _creditCardService.ValidateCard(creditCard);
             return Ok(_creditCardService.GetCardType(creditCard));
         }
         catch (CardNumberTooShortException)

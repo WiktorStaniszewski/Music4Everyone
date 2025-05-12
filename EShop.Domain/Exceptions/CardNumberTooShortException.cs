@@ -12,8 +12,5 @@ public class CardNumberTooShortException : Exception
     public CardNumberTooShortException(string message) : base(message) { }
     public CardNumberTooShortException(string message, Exception innerException) : base(message, innerException) { }
 
-    static void ThrowCustomException()
-    {
-        throw new CardNumberTooShortException();
-    }
+    
 }
