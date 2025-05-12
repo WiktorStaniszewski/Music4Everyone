@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "EShopService.Controllers.CreditCardController",
+    "Method": "CheckIfCardIsValid",
+    "RelativePath": "CreditCard/{creditCard}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "creditCard",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "EShopService.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",
